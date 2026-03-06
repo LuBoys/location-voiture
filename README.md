@@ -1,20 +1,20 @@
 # location-voiture
 
-Site de demonstration pour presenter une activite fictive de location de voitures.
+Demo website created to showcase a fictional car rental business.
 
-## Apercu
+## Preview
 
-![Apercu du site](./docs/preview.png)
+![Website preview](./docs/preview.png)
 
-## Objectif
+## Purpose
 
-Ce projet sert de support de presentation client pour montrer une direction visuelle premium, une interface claire et un parcours de reservation simple.
+This project was designed as a client presentation piece to showcase a premium visual direction, a clear interface, and a simple booking journey.
 
-## Contenu
+## Includes
 
-- page de presentation de l'offre
-- mise en avant des vehicules et services
-- sections de reassurance, tarifs et contact
+- offer presentation page
+- vehicle and service highlights
+- trust, pricing, and contact sections
 
 ## Stack
 
@@ -22,15 +22,17 @@ Ce projet sert de support de presentation client pour montrer une direction visu
 - React
 - TypeScript
 
-## Lancement en local
+## Run locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Le site est ensuite accessible sur le port configure dans le projet.
+The site will be available on the port configured in the project.
 
 ## Note
 
-Il s'agit d'un site de demonstration realise pour illustrer un niveau de finition frontend et une approche de presentation commerciale.
+This is a demo website built to present frontend quality and a polished commercial presentation style.
+
+If you like this project and want to use it, please leave a star on the repository.
