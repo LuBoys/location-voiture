@@ -2,6 +2,10 @@
 
 Site de demonstration pour presenter une activite fictive de location de voitures.
 
+## Apercu
+
+![Apercu du site](./docs/preview.png)
+
 ## Objectif
 
 Ce projet sert de support de presentation client pour montrer une direction visuelle premium, une interface claire et un parcours de reservation simple.
