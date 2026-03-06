@@ -1,0 +1,441 @@
+@import "tailwindcss";
+
+@theme inline {
+    --font-sans: var(--font-sans-pro);
+}
+
+body {
+    font-family: var(--font-sans-pro), sans-serif;
+    overflow-x: hidden;
+    font-feature-settings:
+        "ss01" 1,
+        "calt" 1,
+        "liga" 1;
+}
+
+.font-dm-sans {
+    font-family: var(--font-display), serif;
+    font-feature-settings:
+        "liga" 1,
+        "clig" 1;
+    font-optical-sizing: auto;
+}
+
+img {
+    border-radius: 0.9rem;
+}
+
+@keyframes revealFlow {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.98);
+        filter: blur(12px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+.reveal-item {
+    opacity: 0;
+    will-change: transform, opacity, filter;
+}
+
+.title-word {
+    display: inline-block;
+    transform-origin: 50% 100%;
+    backface-visibility: hidden;
+    will-change: transform, opacity, filter;
+}
+
+.hero-webgl {
+    filter: saturate(1.08) contrast(1.03);
+}
+
+.reveal-active {
+    animation: revealFlow 1.2s cubic-bezier(0.2, 0.6, 0.2, 1) both;
+}
+
+.delay-100 {
+    animation-delay: 100ms;
+}
+
+.delay-200 {
+    animation-delay: 200ms;
+}
+
+.delay-300 {
+    animation-delay: 300ms;
+}
+
+.delay-400 {
+    animation-delay: 400ms;
+}
+
+.delay-500 {
+    animation-delay: 500ms;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.animate-scroll {
+    animation: scroll 38s linear infinite;
+}
+
+@keyframes scrollCards {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-scroll-cards {
+    animation: scrollCards 58s linear infinite;
+}
+
+.animate-scroll-cards:hover {
+    animation-play-state: paused;
+}
+
+.animate-scroll-cards.no-pause:hover {
+    animation-play-state: running;
+}
+
+@keyframes floatSlow {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+.animate-float-slow {
+    animation: floatSlow 5s ease-in-out infinite;
+}
+
+@keyframes routeDashFlow {
+    0% {
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke-dashoffset: -140;
+    }
+}
+
+@keyframes routeAuraPulse {
+    0%,
+    100% {
+        opacity: 0.35;
+        transform: scale(0.95);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.06);
+    }
+}
+
+.route-dash-flow {
+    animation: routeDashFlow 8s linear infinite;
+}
+
+.route-progress-path {
+    filter: drop-shadow(0 0 8px rgb(39 39 42 / 0.35));
+}
+
+.route-car-aura {
+    animation: routeAuraPulse 2.2s ease-in-out infinite;
+    transform-origin: 50% 50%;
+}
+
+.route-step {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    border-radius: 9999px;
+    border: 1px solid rgb(168 162 158 / 0.45);
+    background: rgb(255 255 255 / 0.75);
+    padding: 0.22rem 0.45rem;
+    opacity: 0.5;
+    transform: scale(0.92);
+    transition:
+        opacity 320ms ease,
+        transform 320ms ease,
+        border-color 320ms ease,
+        box-shadow 320ms ease;
+}
+
+.route-step-dot {
+    width: 0.35rem;
+    height: 0.35rem;
+    border-radius: 9999px;
+    background: rgb(87 83 78);
+    box-shadow: 0 0 0 3px rgb(87 83 78 / 0.08);
+}
+
+.route-step-label {
+    font-size: 0.5rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgb(87 83 78);
+    white-space: nowrap;
+}
+
+.route-step-active {
+    opacity: 1;
+    transform: scale(1);
+    border-color: rgb(87 83 78 / 0.65);
+    box-shadow:
+        0 8px 20px rgb(0 0 0 / 0.08),
+        inset 0 1px 0 rgb(255 255 255 / 0.6);
+}
+
+.route-step-active .route-step-dot {
+    background: rgb(24 24 27);
+    box-shadow:
+        0 0 0 3px rgb(24 24 27 / 0.08),
+        0 0 8px rgb(24 24 27 / 0.3);
+}
+
+.route-progress-track {
+    position: relative;
+    overflow: hidden;
+    height: 0.3rem;
+    width: 100%;
+    border-radius: 9999px;
+    background: rgb(214 211 209 / 0.65);
+}
+
+.route-progress-fill {
+    height: 100%;
+    width: 100%;
+    transform-origin: left center;
+    transform: scaleX(0);
+    border-radius: 9999px;
+    background: linear-gradient(
+        90deg,
+        rgb(87 83 78),
+        rgb(39 39 42),
+        rgb(24 24 27)
+    );
+    box-shadow: 0 0 10px rgb(24 24 27 / 0.25);
+}
+
+.google-review-chip {
+    position: relative;
+    border: 1px solid rgb(214 211 209 / 0.8);
+    background: rgb(255 255 255 / 0.72);
+    padding: 0.55rem 0.95rem;
+    border-radius: 9999px;
+    color: rgb(87 83 78);
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    transition:
+        transform 300ms ease,
+        border-color 300ms ease,
+        color 300ms ease,
+        background-color 300ms ease;
+}
+
+.google-review-chip::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        115deg,
+        transparent 28%,
+        rgb(255 255 255 / 45%) 52%,
+        transparent 72%
+    );
+    transform: translateX(-130%);
+    transition: transform 700ms ease;
+}
+
+.google-review-chip:hover {
+    transform: translateY(-2px);
+    border-color: rgb(168 162 158);
+    color: rgb(41 37 36);
+    background: rgb(255 255 255 / 0.9);
+}
+
+.google-review-chip:hover::after {
+    transform: translateX(130%);
+}
+
+.review-pill-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.65rem;
+    max-width: 52rem;
+}
+
+@keyframes chipFloatSoft {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+.review-pill-floating {
+    animation: chipFloatSoft 4.8s ease-in-out infinite;
+}
+
+.brand-logo-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.35rem;
+    height: 4.35rem;
+    border-radius: 9999px;
+    border: 1px solid rgb(255 255 255 / 0.16);
+    background: radial-gradient(
+        circle at 30% 20%,
+        rgb(255 255 255 / 0.1),
+        rgb(0 0 0 / 0.45)
+    );
+    box-shadow:
+        0 10px 28px rgb(0 0 0 / 0.24),
+        inset 0 1px 0 rgb(255 255 255 / 0.14);
+}
+
+.logo-icon {
+    border-radius: 0 !important;
+    opacity: 0.98;
+    filter: drop-shadow(0 2px 4px rgb(0 0 0 / 0.35));
+}
+
+.portfolio-panel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    border: 1px solid rgb(255 255 255 / 0.4);
+    box-shadow: 0 12px 26px rgb(0 0 0 / 0.08);
+    transition:
+        transform 450ms cubic-bezier(0.2, 0.7, 0.2, 1),
+        box-shadow 450ms ease,
+        border-color 350ms ease;
+}
+
+.portfolio-image {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition:
+        transform 900ms cubic-bezier(0.2, 0.7, 0.2, 1),
+        filter 900ms ease;
+}
+
+.portfolio-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgb(0 0 0 / 0.18) 0%,
+        rgb(0 0 0 / 0.1) 25%,
+        rgb(0 0 0 / 0.68) 100%
+    );
+}
+
+.portfolio-panel::after {
+    content: "";
+    position: absolute;
+    inset: -80% -120% auto;
+    height: 180%;
+    width: 80%;
+    transform: rotate(18deg) translateX(-180%);
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgb(255 255 255 / 0.35),
+        transparent
+    );
+    transition: transform 1100ms ease;
+}
+
+.portfolio-panel:hover {
+    transform: translateY(-8px) scale(1.01);
+    border-color: rgb(255 255 255 / 0.7);
+    box-shadow: 0 28px 50px rgb(0 0 0 / 0.18);
+}
+
+.portfolio-panel:hover .portfolio-image {
+    transform: scale(1.1);
+    filter: saturate(1.08) contrast(1.06);
+}
+
+.portfolio-panel:hover::after {
+    transform: rotate(18deg) translateX(220%);
+}
+
+.pricing-card-shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-lift-panel {
+    transform-origin: center top;
+    will-change: transform;
+}
+
+.footer-reveal-panel {
+    will-change: transform, opacity;
+}
+
+.pricing-card-shine::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        110deg,
+        transparent 20%,
+        rgb(255 255 255 / 14%) 45%,
+        transparent 70%
+    );
+    transform: translateX(-140%);
+    transition: transform 0.9s ease;
+}
+
+.pricing-card-shine:hover::before {
+    transform: translateX(140%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal-active
+        .animate-scroll
+        .animate-scroll-cards
+        .animate-float-slow
+        .review-pill-floating
+        .route-dash-flow
+        .route-car-aura {
+        animation: none;
+    }
+}
